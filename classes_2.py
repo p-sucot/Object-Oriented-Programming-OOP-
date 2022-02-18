@@ -20,6 +20,17 @@ class School():
         for s in self.students:
             s.print_data()
 
+
+# Function for finding a particular student in a school,
+# by ID card
+def find_in_school(sc, id):
+    arr = list(filter(lambda x : x.id == id ,sc.students))
+    if len(arr) > 0:
+        print(arr[0].name)
+    else:
+        print("Not exist")
+        
+
 # An example of running a program
 s1 = Student()
 s1.name = "Dan"
@@ -54,3 +65,7 @@ sc.add_sdudent(s3)
 sc.add_sdudent(s4)
 
 sc.print_students_data()
+
+find_in_school(sc, 1234)
+find_in_school(sc, 8765)
+
